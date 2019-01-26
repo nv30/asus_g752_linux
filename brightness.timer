@@ -1,0 +1,10 @@
+[Unit]
+Description=Apply brightness settings
+
+[Timer]
+Unit=brightness.service
+# Wait 1 minute after boot before applying
+OnBootSec=1min
+
+[Install]
+WantedBy=multi-user.target

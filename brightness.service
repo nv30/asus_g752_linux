@@ -1,0 +1,9 @@
+[Unit]
+Description=brightness
+
+[Service]
+Type=oneshot
+ExecStart=/opt/bin/brightness.sh
+
+[Install]
+WantedBy=multi-user.target
