@@ -43,7 +43,7 @@ echo -e "\n# Disable onboard audio \nblacklist snd_hda_codec_generic \nblacklist
 ### Fix for broken brightness level change.
 1. Add backlight handler to GRUB cmdline. Open file **/etc/default/grub** with sudo and replace your default **GRUB_CMDLINE_LINUX_DEFAULT** with:
 ```
-GRUB_CMDLINE_LINUX_DEFAULT="quiet splash **nvidia.NVreg_EnableBacklightHandler=1**"
+GRUB_CMDLINE_LINUX_DEFAULT="quiet splash nvidia.NVreg_EnableBacklightHandler=1"
 ```
 2. Update grub by executing **sudo update-grub** in terminal.
 ### Set brightness level at boot.
