@@ -26,7 +26,16 @@ sudo bash NVIDIA-*.run
 sudo reboot
 ```
 ### Fix for the realtek audio chip heat (disable onboard audio).
-Blacklist onboard audio module:
+Add this lines to the end of the file **/etc/modprobe.d/blacklist.conf**:
+```
+# Disable onboard audio
+blacklist snd_hda_codec_generic
+blacklist snd_hda_codec_realtek
+blacklist snd_hda_intel
+blacklist snd_hda_codec
+blacklist snd_hda_core
+```
+Or just run this command in terminal:
 
 ```
 echo -e "\n# Disable onboard audio \nblacklist snd_hda_codec_generic \nblacklist snd_hda_codec_realtek \nblacklist snd_hda_intel \nblacklist snd_hda_codec \nblacklist snd_hda_core" | sudo tee --append /etc/modprobe.d/blacklist.conf
